@@ -11,17 +11,39 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Sklep Internetowy </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <a class="navbar-brand text-black" asp-controller="Home" asp-action="Index">Sklep Internetowy </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
                     <ul class="navbar-nav flex-grow-1">
                         
+                        <li class="navbar-nav flex-grow-0">
+                            <a class="nav-link text-dark" asp-controller="Mirror" asp-action="Index"> <i class="bi bi-shop"></i> Store</a>
+                        </li>
+                        <li class="nav-bar dropdown flex-grow-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="button"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-gear"></i> Management
+                            </a>
+                        
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"> <i class="bi bi-basket"></i> To bathroom</a>
+                                <a class="dropdown-item"> <i class="bi bi-person-standing"></i> For him</a>
+                                <a class="dropdown-item"> <i class="bi bi-person-standing-dres"></i> For her</a>
+
+                            </div>
+                        </li>
                     </ul>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <input name="searchString" class="form-control" type="text" placeholder="Search" aria-label="Search for a mirror...">                        
+                    </form>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    
                 </div>
             </div>
         </nav>

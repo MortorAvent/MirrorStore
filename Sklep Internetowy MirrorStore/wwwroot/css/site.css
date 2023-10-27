@@ -14,20 +14,11 @@ html {
 }
 
 body {
-    height: 100%;
-    margin-bottom: 5px;
-    background-image: url(images/tlo.jpeg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-color: lightgray;
 }
 
-header{
-    background-color: black;
-}
-a {
-    text-decoration: none;
-    color: black;
-    padding: 3px;
+a{
+    text-decoration:none;
 }
 
 

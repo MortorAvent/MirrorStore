@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace Sklep_Internetowy_MirrorStore.Controllers
 {
-    public class ShopController : Controller
+    public class MirrorController : Controller
     {
         private static IList<Mirror> mirrors = new List<Mirror>
         {

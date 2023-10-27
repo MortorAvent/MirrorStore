@@ -9,9 +9,9 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
     {
         private static IList<Mirror> mirrors = new List<Mirror>
         {
-            new Mirror(){Id = 1, Name = "Bloody Mirror", Description = "Idealne lustro na Halloween", Price = 199.99 },
-            new Mirror(){Id = 2, Name = "Flowers Mirror", Description = "Lustro ozdobione w sztuczne kwiatki", Price = 299.99 },
-            new Mirror(){Id = 3, Name = "Led Mirror", Description = "Lustro z paskiem led", Price = 399.99 },
+            new Mirror(){Id = 1, Name = "Bloody Mirror", Description = "Idealne lustro na Halloween", Price = 199.99 , },
+            new Mirror(){Id = 2, Name = "Flowers Mirror", Description = "Lustro ozdobione w sztuczne kwiatki", Price = 299.99,  },
+            new Mirror(){Id = 3, Name = "Led Mirror", Description = "Lustro z paskiem led", Price = 399.99, }
         };
 
         // GET: ShopController
@@ -79,5 +79,8 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
             mirrors.Remove(mirror1);
             return RedirectToAction("Index");
         }
+
+        
+        
     }
 }

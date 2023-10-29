@@ -1,0 +1,57 @@
+﻿@model Sklep_Internetowy_MirrorStore.Models.Dane
+
+@{
+    ViewData["Title"] = "Form";
+}
+
+<form asp-action="Form" method="post">
+    <div>
+        <label asp-for="Name" >Twoje Imie</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Surname">Twoje Nazwisko</label>
+        <input asp-for="Surname" />
+    </div>
+    <div>
+        <label asp-for="Email">Twoj Email</label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Password">Hasło</label>
+        <input asp-for="Password" />
+    </div>
+    <div>
+        <label asp-for="ConfirmPassword"> Powtórz Hasło</label>
+        <input asp-for="ConfirmPassword" />
+    </div>
+    <div>
+        <label asp-for="PhoneNumber"> Numer Telefonu</label>
+        <input asp-for="PhoneNumber" />
+    </div>
+    <div>
+        <label asp-for="Age">Twój wiek</label>
+        <input asp-for="Age" />
+    </div>
+    
+    <div>
+        <label asp-for="City"> Twoje Miasto</label>
+        <input asp-for="City" />
+    </div>
+    <div>
+        <label asp-for="Category"> Kategorie</label>
+        <input asp-for="Category" />
+    </div>
+    <select asp-for="Category"
+            asp-items="Html.GetEnumSelectList<Dane.Categories>()">
+    </select>
+    <div>
+        <input type="submit" />
+    </div>
+
+    <div asp-validation-summary="All"></div>
+
+</form>
+
+
+        

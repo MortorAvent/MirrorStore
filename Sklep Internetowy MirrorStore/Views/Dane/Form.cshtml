@@ -4,54 +4,60 @@
     ViewData["Title"] = "Form";
 }
 
-<form asp-action="Form" method="post">
-    <div>
-        <label asp-for="Name" >Twoje Imie</label>
-        <input asp-for="Name" />
-    </div>
-    <div>
-        <label asp-for="Surname">Twoje Nazwisko</label>
-        <input asp-for="Surname" />
-    </div>
-    <div>
-        <label asp-for="Email">Twoj Email</label>
-        <input asp-for="Email" />
-    </div>
-    <div>
-        <label asp-for="Password">Hasło</label>
-        <input asp-for="Password" />
-    </div>
-    <div>
-        <label asp-for="ConfirmPassword"> Powtórz Hasło</label>
-        <input asp-for="ConfirmPassword" />
-    </div>
-    <div>
-        <label asp-for="PhoneNumber"> Numer Telefonu</label>
-        <input asp-for="PhoneNumber" />
-    </div>
-    <div>
-        <label asp-for="Age">Twój wiek</label>
-        <input asp-for="Age" />
-    </div>
+
+ <div class="container">   
+     <div class="row">
+         <div class="col-6 offset-3 border border-primary rounded">
+             <div class="text-center">
+                 <h1 class="text-info text-black">Formularz</h1>
+             </div>
+            <form asp-action="Form" method="post">
+                <div class="form-group">
+                    <label asp-for="Name" >Twoje Imie</label>
+                    <input asp-for="Name" placeholder="Wpisz swoje imię" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Surname">Twoje Nazwisko</label>
+                    <input asp-for="Surname" placeholder="Wpisz swoje nazwisko" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Twoj Email</label>
+                    <input asp-for="Email" placeholder="Wpisz email" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Hasło</label>
+                    <input asp-for="Password" placeholder="Wpisz hasło" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword"> Powtórz Hasło</label>
+                    <input asp-for="ConfirmPassword" placeholder="Powtórz hasło" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber"> Numer Telefonu</label>
+                    <input asp-for="PhoneNumber" placeholder="Wpisz numer telefonu" class="form-control" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Age">Twój wiek</label>
+                    <input asp-for="Age" placeholder="Wpisz wiek" class="form-control" autocomplete="off" />
+                </div>
     
-    <div>
-        <label asp-for="City"> Twoje Miasto</label>
-        <input asp-for="City" />
+                <div class="form-group">
+                    <label asp-for="City"> Twoje Miasto</label>
+                    <select asp-for="Category" placeholder="Wybierz miasto" class="form-control"
+                            asp-items="Html.GetEnumSelectList<Dane.Categories>()">
+                    </select>
+                </div>
+    
+                <div>
+                    <input type="submit" class="btn btn-success btn-lg mb-1 " value="Wyślij" /> 
+                    <input type="button" id="clearButton" class="" value="Wyczyść" />
+                </div>
+
+                <div asp-validation-summary="All"></div>
+
+            </form>
+        </div>
     </div>
-    <div>
-        <label asp-for="Category"> Kategorie</label>
-        <input asp-for="Category" />
-    </div>
-    <select asp-for="Category"
-            asp-items="Html.GetEnumSelectList<Dane.Categories>()">
-    </select>
-    <div>
-        <input type="submit" />
-    </div>
-
-    <div asp-validation-summary="All"></div>
-
-</form>
+</div>
 
 
-        

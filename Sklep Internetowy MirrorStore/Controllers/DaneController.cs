@@ -14,13 +14,13 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View("Wynik", dane);
+                return View("Formualarz przesłany", dane);
             }
             else return View();
         }
         public IActionResult Wynik(Dane dane)
         {
-
+            
             return View(dane);
         }
 

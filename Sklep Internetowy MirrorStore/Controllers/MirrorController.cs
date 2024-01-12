@@ -14,6 +14,12 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
             new Mirror(){Id = 3, Name = "Led Mirror", Description = "Lustro z paskiem led", Price = 399.99, }
         };
 
+
+        private readonly MirrorDbContext _context;
+        public MirrorController(MirrorDbContext context)
+        {
+            _context = context;
+        }
         // GET: ShopController
         public ActionResult Index()
         {

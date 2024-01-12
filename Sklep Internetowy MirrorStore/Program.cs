@@ -1,4 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using Sklep_Internetowy_MirrorStore.Models;
+using Microsoft.AspNetCore.Identity;
+using Sklep_Internetowy_MirrorStore.Areas.Identity.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<MirrorDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
+
+builder.Services.AddDbContext<MirrorStoreDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
+
+builder.Services.AddDefaultIdentity<MirrorStoreUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<MirrorStoreDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -17,6 +30,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();;
 
 app.UseAuthorization();
 

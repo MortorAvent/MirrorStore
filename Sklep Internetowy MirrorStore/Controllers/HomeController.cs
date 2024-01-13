@@ -13,13 +13,13 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Index()
+		[AllowAnonymous]
+		public IActionResult Index()
         {
             return View();
         }
-        [Authorize]
-        public IActionResult Privacy()
+		[AllowAnonymous]
+		public IActionResult Privacy()
         {
             return View();
         }

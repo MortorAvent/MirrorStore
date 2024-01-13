@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Sklep_Internetowy_MirrorStore.Areas.Identity.Data;
 using Sklep_Internetowy_MirrorStore.Models;
 using System.Globalization;
 
@@ -34,15 +35,15 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
             return View(mirrors.FirstOrDefault(x => x.Id == id));
         }
 
-		// GET: ShopController/Create
-		[Authorize]
-		public ActionResult Create()
+        // GET: ShopController/Create
+        [Authorize(Roles = "Admin")]
+        public ActionResult Create()
         {
             return View();
         }
 
         // POST: ShopController/Create/5
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Mirror mirror)
@@ -53,20 +54,20 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
         }
 
 
-		// GET: ShopController/Edit/5
-		[Authorize]
-		public ActionResult Edit(int id)
+        // GET: ShopController/Edit/5
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit(int id)
         {
             return View();
         }
 
-		// POST: ShopController/Edit/5
-		[Authorize]
-		[HttpPost]
+        // POST: ShopController/Edit/5
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, Mirror mirror)
         {
-           Mirror mirror1 = mirrors.FirstOrDefault(x => x.Id == id);
+            Mirror mirror1 = mirrors.FirstOrDefault(x => x.Id == id);
             mirror1.Name = mirror.Name;
             mirror1.Description = mirror.Description;
             mirror1.Price = mirror.Price;
@@ -74,16 +75,16 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
             return RedirectToAction("Index");
         }
 
-		// GET: ShopController/Delete/5
-		[Authorize]
-		public ActionResult Delete(int id)
+        // GET: ShopController/Delete/5
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete(int id)
         {
             return View(mirrors.FirstOrDefault(x => x.Id == id));
         }
 
-		// POST: ShopController/Delete/5
-		[Authorize]
-		[HttpPost]
+        // POST: ShopController/Delete/5
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, Mirror mirror)
         {
@@ -93,7 +94,7 @@ namespace Sklep_Internetowy_MirrorStore.Controllers
             return RedirectToAction("Index");
         }
 
-        
-        
+
     }
 }
+

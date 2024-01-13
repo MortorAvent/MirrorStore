@@ -15,6 +15,9 @@ namespace Sklep_Internetowy_MirrorStore.Models
         public string Description { get; set; }
         [Column(TypeName = "double")]
         public double Price { get; set; }
-        
+
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+
     }
 }

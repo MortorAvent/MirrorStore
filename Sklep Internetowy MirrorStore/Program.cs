@@ -18,7 +18,7 @@ public class Program
 
 		builder.Services.AddDbContext<MirrorStoreDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection")));
 
-		builder.Services.AddDefaultIdentity<MirrorStoreUser>(options => options.SignIn.RequireConfirmedAccount = true)
+		builder.Services.AddDefaultIdentity<MirrorStoreUser>(options => options.SignIn.RequireConfirmedAccount = false)
 			.AddRoles<IdentityRole>()
 			.AddEntityFrameworkStores<MirrorStoreDbContext>();
 

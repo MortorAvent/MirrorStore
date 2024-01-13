@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Sklep_Internetowy_MirrorStore.Areas.Identity.Data;
+using Sklep_Internetowy_MirrorStore.Models;
 
 namespace Sklep_Internetowy_MirrorStore.Areas.Identity.Data;
 
 public class MirrorStoreDbContext : IdentityDbContext<MirrorStoreUser>
 {
+
     public MirrorStoreDbContext(DbContextOptions<MirrorStoreDbContext> options)
         : base(options)
     {
